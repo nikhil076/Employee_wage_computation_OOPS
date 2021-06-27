@@ -8,16 +8,20 @@ public class EmployeeWageComputation {
 	static final int partTimeHour = 4;
 	public static void main(String[] args) {
 		System.out.println("Welcome  to Employeee wage computation program");
-		if(checkPresentOrAbsent(isFullDayPresent,isparTimePresent)==isFullDayPresent)
-		{
+		switch (checkPresentOrAbsent(isFullDayPresent, isparTimePresent)) {
+		case isFullDayPresent: {
+			
 			calculateFullDayEmployeeWage();
+			break;
 		}
-		else if(checkPresentOrAbsent(isFullDayPresent, isparTimePresent)==isparTimePresent) 
-		{
+		case isparTimePresent: {
+			
 			calculatePartTimeEmployeeWage();
+			break;
 		}
-		else
-			System.out.println("Employee is absent");
+		default:
+			System.out.println("Employee is Absent");
+		}
 	}
 	public static int checkPresentOrAbsent(int fullDay, int partTime) 
 	{
