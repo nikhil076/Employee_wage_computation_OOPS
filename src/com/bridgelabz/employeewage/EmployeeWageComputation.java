@@ -6,6 +6,7 @@ public class EmployeeWageComputation {
 	static final int isFullDayPresent = 1;
 	static final int isparTimePresent = 2;
 	static final int partTimeHour = 4;
+	static final int workingDayPerMonth = 20;
 	public static void main(String[] args) {
 		System.out.println("Welcome  to Employeee wage computation program");
 		switch (checkPresentOrAbsent(isFullDayPresent, isparTimePresent)) {
@@ -41,9 +42,13 @@ public class EmployeeWageComputation {
 	{
 		int fullDayDailyWage = wagePerHour * fullDayHour;
 		System.out.println("Employee daily wage for full day is :"+fullDayDailyWage);
+		int fullDayMonthlyWage = fullDayDailyWage * workingDayPerMonth;
+		System.out.println("Employee monthly wage for full day is :"+fullDayMonthlyWage);
 	}
 	public static void calculatePartTimeEmployeeWage() {
-		int partTimeDailywage = wagePerHour * partTimeHour;
-		System.out.println("Employee daily wage for part time is "+partTimeDailywage);
+		int partTimeDailyWage = wagePerHour * partTimeHour;
+		System.out.println("Employee daily wage for part time is "+partTimeDailyWage);
+		int partTimeMonthlyWage = partTimeDailyWage * workingDayPerMonth;
+		System.out.println("Employee monthly wage for part time is :"+partTimeMonthlyWage);
 	}
 }
